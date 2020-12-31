@@ -6,6 +6,6 @@ function Header() {
       Expense Tracker
     </h2>
   );
-};
+}
 
 export default Header;
