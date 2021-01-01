@@ -2,9 +2,16 @@ import React from 'react';
 
 function IncomeExpenses() {
   return (
-    <>
-      <h2>Income Expenses</h2>
-    </>
+    <div className="inc-exp-container">
+      <div>
+        <h4>Income</h4>
+        <p id="money-plus" className="money plus">+$0.00</p>
+      </div>
+      <div>
+        <h4>Expenses</h4>
+        <p id="money-plus" className="money minus">-$0.00</p>
+      </div>
+    </div>
   );
 }
 
