@@ -1,3 +1,6 @@
+/*
+// 1st solution - stateful form.
+
 import React, { useState } from 'react';
 
 function AddTransaction() {
@@ -34,3 +37,4 @@ function AddTransaction() {
 }
 
 export default AddTransaction;
+*/
