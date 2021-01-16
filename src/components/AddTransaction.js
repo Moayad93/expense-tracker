@@ -1,7 +1,5 @@
-/*
-// 1st solution - stateful form.
-
 import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 
 function AddTransaction() {
   const [transaction, setTransaction] = useState({
@@ -9,26 +7,25 @@ function AddTransaction() {
     amount: 0
   });
 
-  function handleChange(event) {
-    const name = event.target.name;
-    const value = event.target.value;
+  const { register, handleSubmit } = useForm();
 
-    setTransaction({ ...transaction, [name]: value });
-  };
+  function onSubmit(data) {
+    alert(JSON.stringify(data));
+  }
 
   const { description, amount } = transaction;
 
   return (
     <>
       <h3>Add new transaction</h3>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
           <label htmlFor="description">Name</label>
-          <input type="text" name="description" id="description" placeholder="Enter text..." onChange={handleChange} value={description} />
+          <input ref={register} type="text" name="description" id="description" placeholder="Enter text..." />
         </div>
         <div className="form-control">
           <label htmlFor="amount">Amount<br /> (negative - expense, positive - income)</label>
-          <input type="number" name="amount" id="amount" placeholder="Enter amount..." onChange={handleChange} value={amount} />
+          <input ref={register} type="number" name="amount" id="amount" placeholder="Enter amount..." />
         </div>
         <button className="btn">Add transaction</button>
       </form>
@@ -37,4 +34,3 @@ function AddTransaction() {
 }
 
 export default AddTransaction;
-*/
