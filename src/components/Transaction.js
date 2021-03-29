@@ -1,9 +1,6 @@
 import React from 'react';
 
 function Transaction({ transaction }) {
-  // const sign = transaction.amount < 0 ? '-' : '+';
-  // const labelColor = transaction.amount < 0 ? 'minus' : 'plus';
-
   let sign;
   let labelColor;
 
