@@ -24,8 +24,16 @@ function Transaction({ transaction }) {
 
   return (
     <li className={labelColor}>
-      {transaction.text} <span>{sign}${Math.abs(transaction.amount)}</span>
-      <button className="delete-btn" onClick={() => deleteTransaction(transaction.id)}>x</button>
+      {transaction.text}{' '}
+      <span>
+        {sign}${Math.abs(transaction.amount)}
+      </span>
+      <button
+        className="delete-btn"
+        onClick={() => deleteTransaction(transaction.id)}
+      >
+        x
+      </button>
     </li>
   );
 }
