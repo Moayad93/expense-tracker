@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, Fragment } from 'react';
 import { useForm } from 'react-hook-form';
 import { GlobalContext } from '../context/GlobalState';
 
@@ -27,15 +27,14 @@ function AddTransaction() {
   }
 
   return (
-    <>
+    <Fragment>
       <h3>Add new transaction</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           ref={register}
-          type="id"
+          type="hidden"
           name="id"
           id="id"
-          type="hidden"
           value={Math.floor(Math.random() * 100000000)}
         />
         <div className="form-control">
@@ -67,7 +66,7 @@ function AddTransaction() {
         {Object.keys(errors).length > 0 &&
           'There are errors, check your console.'}
       </div> */}
-    </>
+    </Fragment>
   );
 }
 
